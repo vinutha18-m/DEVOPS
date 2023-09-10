@@ -1,0 +1,139 @@
+steps to do in docker
+
+sudo su
+yum update -y
+vi docker.sh
+
+sudo yum update -y
+sudo yum search docker
+sudo yum info docker
+sudo yum install -y docker
+sudo systemctl enable docker.service
+sudo systemctl start docker.service
+sudo systemctl status docker.service
+docker --version
+sudo yum install git -y
+sudo curl -L    https://github.com/docker/compose/releases/download/1.22.0/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+sh docker.sh
+docker pull httpd
+docker run -it -d httpd
+docker exec -it <id> /bin/bash
+docker ps
+docker images
+docker stop id
+docker rmi httpd
+exit
+
+
+17  mkdir Dockerfile
+   18  ls
+   19  cd Dockerfile/
+   20  vi dockerfile
+   21  cat dockerfile
+catdocker pull amazonlinux
+docker run -it -d amazonlinux
+docker exec -it <container-ID> /bin/bash
+
+# inside container
+----------------------------------
+1  ls
+    2  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+    3  yum install wget -y
+    4  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+    5  ls
+    6  tar -zxvf apache-tomcat-9.0.78.tar.gz
+    7  yum install tar -y
+    8  tar -zxvf apache-tomcat-9.0.78.tar.gz
+    9  yum install gzip -y
+   10  tar -zxvf apache-tomcat-9.0.78.tar.gz
+   11  ls
+   12  cd apache-tomcat-9.0.78
+   13  ls
+   14  cd bin/
+   15  ls
+   16  sh startup.sh
+   17  pwd
+   18  cd ..
+   19  yum install java -y
+   20  ls
+   21  cd bin/
+   22  pwd
+   23  ls
+   24  sh startup.sh
+   25  exit
+   26  pwd
+   27  history
+
+FROM amazonlinux
+MAINTAINER 
+"vinuthausha0@gmail.com"
+RUN yum update -y
+RUN yum install wget -y
+RUN yum install tar -y
+RUN yum install gzip -y
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+RUN tar -zvxf apache-tomcat-9.0.78.tar.gz
+RUN yum install java -y
+RUN sh apache-tomcat-9.0.78/bin/startup.sh
+
+
+
+        mkdir Dockerfile
+   18  ls
+   19  cd Dockerfile/
+   20  vi dockerfile.txt
+   21  cat dockerfile.txt
+    
+
+   23  pwd
+   24  docker build -t vinu Dockerfile/
+   25  docker images
+   26  docker run -it -d vinu
+   27  docker ps
+   28  docker exec -it <id> /bin/bash
+   29  history
+
+docker swarm -mastermode
+
+   17  yum update -y
+   18  vi docker.sh
+   19  cat docker.sh
+   20  sh docker.sh
+   23  docker swarm init
+   24  docker node ls
+   26  docker node promote ip-172-31-15-0.ap-south-1.compute.internal
+   27  docker node  demote ip-172-31-15-0.ap-south-1.compute.internal
+   28  docker swarm leave -f
+   29  history
+
+workmode(docker swarm)
+ 1  yum update -y
+    2  vi docker.sh
+    3  sh docker.sh
+    5  docker --version
+    6  docker node ls
+   13  docker swarm join --token SWMTKN-1-4a7c0vxjx3bycs0x7pe3cv79eemx3hk2y6468etxxyurl93yjy-0bbi4964klrd9kgnf2k0jomxw 172.31.13.231:2377
+   14  docker node ls
+   15  docker swarm leave -f
+   16  history
+
+
+docker service and scalling
+
+ docker swarm init
+   32  docker service ls
+   34  docker service create --replicas=3 -p 4000:80 --name=server httpd
+   35  docker service ls
+
+   36  docker service scale 2j42ac98xzix=2
+   37  docker service ls
+   38  docker service rm 2j42ac98xzix
+   39  docker service ls
+   40  docker swarm leave -f
+
+
+
+

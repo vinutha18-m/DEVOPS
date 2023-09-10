@@ -1,0 +1,20 @@
+  344  mkdir dir/dim/kl/
+  345  mkdir -p kl/kk
+  346  nano a.txt
+  347  cat a.txt
+  348  head a.txt
+  349  tail a.txt
+  350  man sort
+  351  nano b.txt
+  352  sort b.txt
+  353  nano b.txt
+  354  cat b.txt
+  355  sort b.txt
+  356  sort -r b.txt
+  357  uniq -c b.txt
+  358  uniq -d b.txt
+  359  cat b.txt
+  360  uniq -u b.txt
+  361  uniq -dc b.txt
+  362  ls
+  363  uniq -uc

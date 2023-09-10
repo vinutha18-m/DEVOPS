@@ -1,0 +1,21 @@
+   86  ansible demo -b -m yum -a "pkg=httpd state=present"
+   87  ansible demo -ba "which httpd"
+   88  ansible demo -m shell -a "echo 'hi' "
+   89  echo "demo config" >>demo.txt
+   90  ls
+   93  ansible demo -ba "pwd"
+   96  ansible demo -m copy -a "src=./demo.txt dest=/home/ansible"
+   97  ansible demo -a "ls"
+   98  ansible demo -a "rm -rf demo.txt"
+   99  ansible demo -a "ls"
+  101  ansible demo -m setup
+  104  ansible demo -b -m file -a "path=/home/ansible/allies state=directory"---------(to create directory)
+  105  ansible demo -b -m file -a "path=/home/ansible/ state=directory mode=0711"
+  107  ansible demo -a "ls -l"
+  108  ansible demo -b -m file -a "path=/home/ansible/allies state=directory mode=0711"--(giving permission to directory)
+  109  ansible demo -a "ls -l"
+  110  ansible demo -b -m file -a "path=/home/ansible/log.txt state=touch"-------------(to create file)
+  111  ansible demo -a "ls -l"
+  112  ansible demo -m file -a "path=/home/ansible/log.txt state=absent"--------------(to delete file)
+  113  ansible demo -a "ls -l"
+

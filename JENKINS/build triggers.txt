@@ -1,0 +1,39 @@
+    1  yum update -y
+    2  wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+    3  tar -zxvf apache-maven-3.9.4-bin.tar.gz
+    4   mv apache-maven-3.9.4 Maven
+    5  cd Maven/
+    6  ls
+    7  cd bin
+    8  ls
+    9  cd
+   10  ls -a
+   11  nano .bashrc
+   12  cat .bashrc
+   13  source .bashrc
+   14  yum install java-11* -y
+   15  mvn --version
+   16  mvn archetype:generate
+   17  cd canara
+   18  mvn validate
+   19  mvn clean
+   20  mvn compile
+   21  mvn test
+   22  mvn package
+   23  mvn verify
+   24  mvn install
+   26  sudo yum install git(inside the project only install git)
+   27  git init
+   28  git add .
+   29  git config --global user.email "vinuthausha0@gmail.com"
+   30  git config --global user.name "vinutha18-m"
+   31  git commit -m "sample"
+   32  git remote add origin https://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@github.com/vinutha18-m/jenkins.git
+   33  git push origin master
+   34  nano jenkins.sh(paste jenkis installation commands)
+   35  cat jenkins.sh
+   36  sh jenkins.sh
+   37  sudo systemctl status jenkins
+   38  cat /var/lib/jenkins/secrets/initialAdminPassword
+
+       http://15.206.153.10:8080/ copy  this kind of url

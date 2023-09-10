@@ -1,0 +1,12 @@
+   74  ansible demo -m ping
+   73  ansible all --list-hosts
+   74  ansible demo -a "pwd"
+   75  ansible demo -a "uname -a"
+   76  ansible demo -a "touch sample.txt"
+   77  ansible demo -a "ls"
+   78  ansible demo -ba "which httpd"
+   79  ansible demo -ba "systemctl status httpd"
+   80  ansible demo -ba "systemctl start httpd"
+   81  ansible demo -ba "systemctl status httpd"
+   83  ansible demo -ba "yum remove httpd -y"
+   84  ansible demo -ba "which httpd"

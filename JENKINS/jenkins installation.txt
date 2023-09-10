@@ -1,0 +1,49 @@
+Jenkins installation on amazon linux 2
+-----------------------------------------------------------------------------------------------
+
+
+sudo yum update -y
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+sudo amazon-linux-extras install java-openjdk11 -y
+sudo yum install jenkins -y
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+https://github.com/vinutha18-m/jenkin2.git
+http://3.6.87.228:8080/
+90acb476db4f49d3bea0108e93c12c51
+
+https://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@github.com/vinutha18-m/jenkin2.g
+
+http://13.127.2.251:8080/
+http://13.127.2.251:8080/
+
+-------------------------------------------------------------------------------------------------
+pipeline 
+{
+    	agent any
+    		tools {
+        			maven 'maven'
+  		}
+    	stages {
+        		stage('git clone') {
+            			steps {
+               			git 'https://github.com/vinutha18-m/jenkin2.git'
+            			}
+        		}
+        		stage('compile') {
+            			steps {
+                			sh 'mvn compile'
+            			}
+        		}
+        		stage('test') {
+            			steps {
+                			sh 'mvn test'
+            			}
+        		}
+    	}
+}

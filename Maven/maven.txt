@@ -1,0 +1,120 @@
+   --default life cycle-----
+--------------------------------------JAR FILE----------------------------------------------------------------------------------------- 
+
+   1  yum update -y
+    2  wget https://dlcdn.apache.org/maven/maven-3/3.9.4/binaries/apache-maven-3.9.4-bin.tar.gz
+    3  tar -zxvf apache-maven-3.9.4-bin.tar.gz
+    4  mv apache-maven-3.9.4 Maven
+    5  cd Maven/
+    6  cd bin/
+    7  cd
+    8  nano.bashrc
+    9  ls -a
+   11  nano .bashrc(export PATH=/root/Maven/bin:$PATH)
+   12  cat .bashrc
+   13  source .bashrc
+   14   yum install java-11* -y
+   15  mvn archetype:generate
+   16  cd canara/
+   48  mvn validate
+   49  mvn clean
+   50  mvn compile
+   51  lsy
+   52  cd target/
+   53  ls
+   54  cd ..
+   55  ls
+   56  cd src/
+   57  ls
+   58  cd main/
+   59  ls
+   60  cd java/
+   61  ls
+   62  cd shridevi/
+   63  ls
+   64  cat App.java
+   65  ls
+   66  pwd
+   67  cd ../../../..
+   68  ls
+   69  cd target/
+   70  ls
+   71  cd classes/
+   72  ls
+   73  cd shridevi
+   74  ls
+   75  pwd
+   76  ls
+   77  cd canara/
+   78  cd ../../..
+   80  cd target/classes/shridevi
+   81  mvn test
+   82  cd ../../..
+   83  mvn test
+   84  ls
+   85  cd target/
+   86  ls
+   87  cd surefire-reports/
+   88  ls
+   89  cat shridevi.AppTest.txt
+   90  cd ../..
+   92  mvn package
+   93  ls
+   94  cd target/
+   95  ls
+   96  cd canara/
+   97  cd ..
+   98  ls
+   99  mvn verify
+  100  mvn install
+  101  cd
+  102  ls -a
+  103  cd .m2/
+  104  ls
+  105  cd repository/
+  106  ls
+  107  cd shridevi/
+  108  ls
+  109  cd canara/
+  110  ls
+  111  cd 1.0-SNAPSHOT/
+  112  ls
+  113  pwd
+  114  history
+
+
+-----------------------------------------WAR FILE-------------------------------------------------
+  115  cd
+  116  mvn archetype:generate
+  117  ls
+  118  cd telecom
+  119  ls
+  120  cd src/main/webapp/
+  121  ls
+  122  cat index.jsp
+  123  pwd
+  124  cd ../../..
+  125  mvn validate
+  126  ls
+  127  mvn clean
+  128  mvn compile
+  129  ls
+  130  mvn test
+  131  mvn package
+  132  ls
+  133  cd target/
+  134  ls
+  135  cd ..
+  136  mvn verify
+  137  mvn install
+   14  cd telecom/
+   15  mvn site
+   16  cd target/
+   17  ls
+   18  cd site/
+   19  ls
+   20  cat index.html (copy code ,paste it in vs code n run live server )
+
+https://github.com/vinutha18-m/pipeline.git
+
+

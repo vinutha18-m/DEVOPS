@@ -1,0 +1,23 @@
+sudo amazon-linux-extras install ansible2 -y
+
+ansible --version
+
+vi /etc/ansible/hosts
+
+vi /etc/ansible/ansible.cfg
+
+
+
+ansible ALL=(ALL) NOPASSWD: ALL
+
+vi /etc/ssh/sshd_config
+
+service sshd restart
+
+
+
+ssh-keygen
+
+ssh-copy-id ansible@172.31.47.247
+
+ssh-copy-id ansible@172.31.33.112

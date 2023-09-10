@@ -1,0 +1,70 @@
+docker pull amazonlinux
+docker run -it -d amazonlinux
+docker exec -it <container-ID> /bin/bash
+
+# inside container
+----------------------------------
+1  ls
+    4  wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+    5  ls
+    6  ls
+    7  yum install tar -y
+    8  tar -zxvf apache-tomcat-9.0.78.tar.gz
+    9  yum install gzip -y
+   10  tar -zxvf apache-tomcat-9.0.78.tar.gz
+   11  ls
+   12  cd apache-tomcat-9.0.78
+   //13  ls
+   14  cd bin/
+   15  ls
+   16  sh startup.sh
+   17  pwd
+   18  cd ..
+   19  yum install java -y
+  sh 
+   21  cd bin/
+   22  pwd
+   23  ls
+   24  sh startup.sh
+   27  history
+   25  exit
+  
+  
+
+
+
+
+17  mkdir Dockerfile
+   18  ls
+   19  cd Dockerfile/
+   20  vi dockerfile
+FROM amazonlinux
+MAINTAINER "vinuthausha0@gmail.com"
+RUN yum update -y
+RUN yum install wget -y
+RUN yum install tar -y
+RUN yum install gzip -y
+RUN wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.78/bin/apache-tomcat-9.0.78.tar.gz
+RUN tar -zvxf apache-tomcat-9.0.78.tar.gz
+RUN yum install java -y
+RUN sh apache-tomcat-9.0.78/bin/startup.sh
+
+   21  cat dockerfile
+   22  cd ..
+   23  pwd
+   24  docker build -t <name> Dockerfile/
+  // 25  docker images
+   26  docker run -it -d <above name>
+   27  docker ps
+   28  docker exec -it 6cb74d7d73b4 /bin/bash
+   29  history
+
+bash-5.2# history
+    1  ls
+    2  cd apache-tomcat-9.0.78
+    3  ls
+    4  cd bin/
+    5  ls
+    6  sh startup.sh
+    7  history
+bash-5.2# exit

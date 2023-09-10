@@ -1,0 +1,52 @@
+-------------------target-section------------------------
+---
+- name: simple connection
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+
+
+-------------------notify-handler------------------------
+
+---
+- name: simple connection
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+        - name: install HTTPD server on linux
+          action: yum name=httpd state=installed
+          notify: restart httpd
+  handlers:
+        - name: restart httpd
+          action: service name=httpd state=restarted
+
+-----------------------looping---------------------------
+tasks:
+        - name: add lists of users in my nodes
+          user: name='{{item}}' state=present
+          with_items:
+                  - vinu    -----------(give space after - then write)
+                  - usha
+
+---------------------conditional statements-------
+---
+- name: simple connection
+  hosts: demo
+  user: ansible
+  become: yes
+  connection: ssh
+  tasks:
+
+           - name: install apache server for Debian family
+             command: apt-get -y install apache2
+             when: ansible_os_family = "Debian"
+
+           - name: install httpd server for RedHat family
+             command: yum -y install httpd
+             when: ansible_os_family = "RedHat"
+
+
+

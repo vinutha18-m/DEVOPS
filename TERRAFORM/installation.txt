@@ -1,0 +1,90 @@
+sudo yum install -y yum-utils shadow-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo
+sudo yum -y install terraform   
+
+
+    1  terraform --version
+    2  vi main.tf
+    3  cat main.tf
+    4  terraform init
+    5  terraform validate
+    6  terraform plan
+    7  terraform apply
+    8  terraform destroy
+
+--------------------------------------------------
+provider "aws" {
+  access_key = "AKIA4T74ACGVPLV3J744"
+  secret_key = "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"
+  region     = "ap-south-1"
+}
+resource "aws_security_group" "web-node" { #web-node is a security group name
+  name        = "web-node"
+  description = "Web Security Group"
+  ingress { # inbound rule
+    from_port   = 0
+    to_port     = 0
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress { #outbound rule
+    from_port   = 0
+    to_port     = 0
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+resource "aws_instance" "terraform1" {
+  ami           = "ami-03cb1380eec7cc118"
+  instance_type = "t2.micro"
+  key_name      = "mumbailinux"
+  security_groups = ["${aws_security_group.web-node.name}"]
+  count         = 3
+}
+
+
+Aditi R Patil
+  6:48 PM
+Screenshot (60).png
+ 
+Screenshot (60).png
+
+
+
+
+sak_shetty
+  6:51 PM
+provider "aws" {
+  access_key = "AKIA4T74ACGVPLV3J744"
+  secret_key = "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"
+  region     = "ap-south-1"
+}
+resource "aws_security_group" "web-node" { #web-node is a security group name
+  name        = "web-node"
+  description = "Web Security Group"
+  ingress { # inbound rule
+    from_port   = 0
+    to_port     = 0
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+  egress { # outbound rule
+    from_port   = 0
+    to_port     = 0
+    protocol    = "all"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+resource "aws_instance" "terraform_demo" {
+ami = "ami-03cb1380eec7cc118"
+instance_type = "t2.micro"
+key_name = "mumbailinux"
+count = "1"
+user_data = <<-EOF
+              #!/bin/bash
+              yum update -y
+              yum install -y httpd
+              systemctl start httpd
+              systemctl enable httpd
+              EOF
+}

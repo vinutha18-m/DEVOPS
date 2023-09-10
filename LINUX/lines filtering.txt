@@ -1,0 +1,15 @@
+1  nano demo.txt
+    2  cat demo.txt
+    3  head -n demo.txt
+    4  head demo.txt
+    5  tail demo.txt
+    6  head -n 5 demo.txt
+    7  head 6 demo.txt
+    8  head -6 demo.txt
+    9  tail -4 demo.txt
+   10  tail -3 demo.txt
+   11  head -7 demo.txt | tail -3
+   12  tail -3 demo.txt
+   13  head -3 demo.txt
+   14  rm demo.txt
+   15  history
